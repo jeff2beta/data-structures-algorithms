@@ -1,0 +1,27 @@
+Algorithm arrayMax(A,n)
+Input:    An array A storing n≥1 integers.
+Output: The maximum element in A.
+currentMax←A[0]
+for i←1 to n−1 do
+if currentMax<A[i] then
+currentMax←A[i]
+return currentMax
+
+
+Algorithm recursiveMax(A,n)
+Input:  An array A storing n≥1 integers.
+Output: The maximum element in A.
+if n=1 then
+return A[0]
+return max(recursiveMax(A,n−1),A[n−1])
+
+Algorithm arrayFind(x,A)
+Input:    An element x and an n-element array, A.
+Output: The index i such that x=A[i] or −1 if no element of A is equal to x.
+i←0
+while i<n do
+if x=A[i] then
+return i
+else
+i←i+1
+return −1
