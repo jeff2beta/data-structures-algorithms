@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Finding Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Path Finding Visualizer</h1>
+            <div class="controls">
+                <select id="algorithm">
+                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                    <option value="astar">A* Algorithm</option>
+                    <option value="bfs">Breadth-First Search</option>
+                    <option value="dfs">Depth-First Search</option>
+                </select>
+                <button id="start">Start</button>
+                <button id="step" disabled>Step</button>
+                <button id="clear">Clear</button>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="grid-container">
+                <canvas id="grid"></canvas>
+            </div>
+            <div class="code-panel">
+                <div class="code-header">
+                    <h2>Algorithm Code</h2>
+                    <div class="code-controls">
+                        <span id="step-info">Step: 0</span>
+                    </div>
+                </div>
+                <pre><code id="algorithm-code" class="python"></code></pre>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
